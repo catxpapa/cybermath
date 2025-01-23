@@ -18,15 +18,23 @@ export const GameContainer = ({ difficulty, onExit }) => {
         const num2 = Math.floor(Math.random() * max);
         const operators = difficulty === 'easy' ? ['+'] : difficulty === 'medium' ? ['+', '-'] : ['+', '-', '*'];
         const operator = operators[Math.floor(Math.random() * operators.length)];
-
+    
         let answer;
         switch (operator) {
             case '+': answer = num1 + num2; break;
-            case '-': answer = num1 - num2; break;
+            case '-': // 确保 num1 >= num2
+                      const finalNum1 = Math.max(num1, num2); // 确保 num1 >= num2
+                      const finalNum2 = Math.min(num1, num2); // 确保 num2 <= num1
+                      answer = finalNum1 - finalNum2;
+                      setProblem({
+                          question: `${finalNum1} - ${finalNum2} = ?`,
+                          answer: answer.toString()
+                      });
+                      return; // 提前返回，避免重复设置 problem
             case '*': answer = num1 * num2; break;
             default: answer = num1 + num2;
         }
-
+    
         setProblem({
             question: `${num1} ${operator} ${num2} = ?`,
             answer: answer.toString()
