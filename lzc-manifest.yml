@@ -1,14 +1,13 @@
 lzc-sdk-version: 0.1
-name: Cyber Math
+name: 数战勇士
 package: cloud.lazycat.app.cybermath
 version: 0.0.1
-description: 
+description: 一个适合小朋友的数学小游戏
 license: https://choosealicense.com/licenses/mit/
-homepage: 
-author: 
+homepage: https://github.com/CATxPAPA/cybermath
+author: CATxPAPA@Gmail.com
 application:
   subdomain: cybermath
   routes:
     - /=file:///lzcapp/pkg/content/
-    # - /api=exec://5173,./lzcapp/pkg/content/run.sh
 
