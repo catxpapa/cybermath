@@ -9,6 +9,6 @@ author:
 application:
   subdomain: cybermath
   routes:
-    - /=http://app.cloud.lazycat.app.cybermath.lzcapp:5173
-    - /api=exec://5173,./lzcapp/pkg/content/run.sh
+    - /=file:///lzcapp/pkg/content/
+    # - /api=exec://5173,./lzcapp/pkg/content/run.sh
 
