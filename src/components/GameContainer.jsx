@@ -23,6 +23,7 @@ export const GameContainer = ({ difficulty, onExit }) => {
         switch (operator) {
             case '+': answer = num1 + num2; break;
             case '-': // 确保 num1 >= num2
+                    
                       const finalNum1 = Math.max(num1, num2); // 确保 num1 >= num2
                       const finalNum2 = Math.min(num1, num2); // 确保 num2 <= num1
                       answer = finalNum1 - finalNum2;
