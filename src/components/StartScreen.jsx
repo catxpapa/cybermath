@@ -5,7 +5,7 @@ export const StartScreen = ({ onStart }) => {
     <div className="flex flex-col items-center justify-center h-screen p-4">
       <div className="flex flex-col items-center mb-8">
         <img 
-          src="/ico.png" 
+          src="/profile.png" 
           alt="cyber mecha" 
           className="w-48 h-48 object-contain animate-float mb-4" 
         />

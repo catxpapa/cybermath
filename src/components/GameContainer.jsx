@@ -57,8 +57,8 @@ export const GameContainer = ({ difficulty, onExit }) => {
     return (
         <div className="flex flex-col items-center justify-end min-h-screen p-4 relative">
             <div className="fixed top-8 left-1/2 transform -translate-x-1/2 z-20 flex gap-8 bg-cyber-dark/80 backdrop-blur-sm p-4 rounded-lg border border-neon-blue">
-                <div className="text-neon-green text-3xl font-bold">Score: {score}</div>
-                <div className="text-neon-purple text-3xl font-bold">Streak: {streak}</div>
+                <div className="text-neon-green text-2xl text-nowrap font-bold">得分: {score}</div>
+                <div className="text-neon-purple text-2xl text-nowrap font-bold">连击: {streak}</div>
             </div>
           
             <div className="fixed top-0 left-0 w-full h-full pointer-events-none z-0">
