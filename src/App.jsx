@@ -1,17 +1,30 @@
-import React from 'react';
-import { VideoGenerator } from './components/VideoGenerator';
+import React, { useState, useEffect } from 'react';
+import { GameContainer } from './components/GameContainer';
+import { StartScreen } from './components/StartScreen';
 
 export const App = () => {
+  const [gameStarted, setGameStarted] = useState(false);
+  const [difficulty, setDifficulty] = useState(null);
+
   return (
-    <div className="min-h-screen bg-gray-900 text-white">
-      <div className="container mx-auto px-4 py-8">
-        <header className="mb-12 text-center">
-          <h1 className="text-4xl font-bold mb-2 bg-gradient-to-r from-purple-400 to-pink-500 bg-clip-text text-transparent">
-            AI Video Generator
-          </h1>
-          <p className="text-gray-400">Transform your ideas into stunning videos with AI</p>
-        </header>
-        <VideoGenerator />
+    <div className="min-h-screen bg-cyber-dark font-cyber text-neon-blue overflow-hidden relative">
+      <video
+        autoPlay
+        loop
+        muted
+        className="fixed top-0 left-0 min-w-full min-h-full object-cover opacity-20 z-0"
+      >
+        <source src="https://cdn.pixabay.com/video/2024/03/02/202718-918779955_medium.mp4" type="video/mp4" />
+      </video>
+      <div className="relative z-10 w-full h-screen">
+        {!gameStarted ? (
+          <StartScreen onStart={(level) => {
+            setDifficulty(level);
+            setGameStarted(true);
+          }} />
+        ) : (
+          <GameContainer difficulty={difficulty} onExit={() => setGameStarted(false)} />
+        )}
       </div>
     </div>
   );

@@ -1,9 +1,33 @@
-@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700&display=swap');
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 body {
-  @apply bg-gray-900;
+  margin: 0;
+  padding: 0;
+  background-color: theme('colors.cyber.darker');
+  color: theme('colors.neon.blue');
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.animate-glow {
+  animation: glow 2s ease-in-out infinite alternate;
+}
+
+@keyframes glow {
+  from {
+    text-shadow: 0 0 10px theme('colors.neon.blue'),
+                 0 0 20px theme('colors.neon.blue');
+  }
+  to {
+    text-shadow: 0 0 20px theme('colors.neon.blue'),
+                 0 0 30px theme('colors.neon.blue');
+  }
 }
