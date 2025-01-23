@@ -14,7 +14,7 @@ export const App = () => {
         muted
         className="fixed top-0 left-0 min-w-full min-h-full object-cover opacity-20 z-0"
       >
-        <source src="https://cdn.pixabay.com/video/2024/03/02/202718-918779955_medium.mp4" type="video/mp4" />
+        <source src="/back.mp4" type="video/mp4" />
       </video>
       <div className="relative z-10 w-full h-screen">
         {!gameStarted ? (

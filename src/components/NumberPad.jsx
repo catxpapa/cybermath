@@ -7,13 +7,13 @@ export const NumberPad = ({ value, onChange, onSubmit }) => {
   };
 
   const handleDelete = () => {
-    onChange(value.slice(0, -1));
+    onChange(value="");
   };
 
   const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 0];
 
   return (
-    <div className="w-full max-w-xs mx-auto">
+    <div className="w-full max-w-md  mx-auto" >
       <div className="mb-4 h-16 bg-cyber-dark border-2 border-neon-blue rounded-lg flex items-center justify-end px-4 overflow-hidden">
         <span className="text-3xl text-neon-blue font-cyber">{value || '0'}</span>
       </div>
@@ -24,7 +24,8 @@ export const NumberPad = ({ value, onChange, onSubmit }) => {
             onClick={() => handleNumberClick(num.toString())}
             className="bg-cyber-light border-2 border-neon-blue text-neon-blue h-16 rounded-lg 
                      hover:bg-neon-blue hover:text-cyber-dark transition-all duration-300 
-                     text-2xl font-cyber flex items-center justify-center"
+                     text-2xl font-cyber flex items-center justify-center" 
+                     style={{ minWidth: '3em' }}
           >
             {num}
           </button>
@@ -35,7 +36,7 @@ export const NumberPad = ({ value, onChange, onSubmit }) => {
                    hover:bg-neon-purple hover:text-cyber-dark transition-all duration-300 
                    text-xl font-cyber flex items-center justify-center"
         >
-          DEL
+          ╳
         </button>
         <button
           onClick={onSubmit}
@@ -43,7 +44,7 @@ export const NumberPad = ({ value, onChange, onSubmit }) => {
                    hover:bg-neon-green hover:text-cyber-dark transition-all duration-300 
                    text-xl font-cyber flex items-center justify-center"
         >
-          ENTER
+          ↵
         </button>
       </div>
     </div>
