@@ -1,0 +1,14 @@
+lzc-sdk-version: 0.1
+name: Cyber Math
+package: cloud.lazycat.app.cybermath
+version: 0.0.1
+description: 
+license: https://choosealicense.com/licenses/mit/
+homepage: 
+author: 
+application:
+  subdomain: cybermath
+  routes:
+    - /=http://app.cloud.lazycat.app.cybermath.lzcapp:5173
+    - /api=exec://5173,./lzcapp/pkg/content/run.sh
+
